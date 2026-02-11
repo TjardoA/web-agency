@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans bg-mist text-ink antialiased;
+}
+
+.section-grid {
+  @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3;
+}
