@@ -1,4 +1,4 @@
-import { Service, Project, Testimonial } from "./types";
+import { Service, Project, PortfolioItem, Testimonial } from "./types";
 
 export const services: Service[] = [
   {
@@ -24,6 +24,36 @@ export const projects: Project[] = [
   { title: "Project Two", tag: "E-commerce" },
   { title: "Project Three", tag: "Consulting" },
   { title: "Project Four", tag: "Branding" }
+];
+
+export const portfolioItems: PortfolioItem[] = [
+  {
+    title: "Showcase 01",
+    summary: "Clean bedrijfswebsite met focus op conversie.",
+    images: [
+      "https://picsum.photos/id/26/1200/800",
+      "https://picsum.photos/id/96/1200/800",
+      "https://picsum.photos/id/119/1200/800"
+    ]
+  },
+  {
+    title: "Showcase 02",
+    summary: "Portfolio-layout met editorial typografie en sterke visuals.",
+    images: [
+      "https://picsum.photos/id/160/1200/800",
+      "https://picsum.photos/id/180/1200/800",
+      "https://picsum.photos/id/193/1200/800"
+    ]
+  },
+  {
+    title: "Showcase 03",
+    summary: "Landing page met heldere structuur en snelle performance.",
+    images: [
+      "https://picsum.photos/id/201/1200/800",
+      "https://picsum.photos/id/211/1200/800",
+      "https://picsum.photos/id/225/1200/800"
+    ]
+  }
 ];
 
 export const testimonials: Testimonial[] = [

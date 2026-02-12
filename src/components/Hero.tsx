@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Button from "./Button";
 
 const Hero = () => (
-  <section className="px-4 pt-16 pb-14 sm:pt-20 sm:pb-18 lg:pt-24 lg:pb-20 bg-white">
+  <section id="home" className="px-4 pt-16 pb-14 sm:pt-20 sm:pb-18 lg:pt-24 lg:pb-20 bg-white">
     <div className="mx-auto max-w-6xl grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
       <div className="space-y-6">
         <motion.p

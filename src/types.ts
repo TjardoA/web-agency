@@ -8,6 +8,12 @@ export type Project = {
   tag: string;
 };
 
+export type PortfolioItem = {
+  title: string;
+  summary: string;
+  images: string[];
+};
+
 export type Testimonial = {
   name: string;
   role: string;
