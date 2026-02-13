@@ -27,41 +27,47 @@ const Footer = () => (
           </div>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-3 text-sm text-slate-200">
+        <div className="grid gap-8 sm:grid-cols-3 text-sm text-slate-200">
           <div className="space-y-3">
             <p className="font-semibold text-white">Navigatie</p>
-            <a className="block hover:text-blue-200" href="/">Home</a>
-            <a className="block hover:text-blue-200" href="/portfolio">Portfolio</a>
-            <a className="block hover:text-blue-200" href="/diensten">Diensten</a>
-            <a className="block hover:text-blue-200" href="/#development">Development</a>
-            <a className="block hover:text-blue-200" href="/contact">Contact</a>
+            <div className="space-y-2">
+              <a className="block hover:text-blue-200" href="/">Home</a>
+              <a className="block hover:text-blue-200" href="/portfolio">Portfolio</a>
+              <a className="block hover:text-blue-200" href="/diensten">Diensten</a>
+              <a className="block hover:text-blue-200" href="/#development">Development</a>
+              <a className="block hover:text-blue-200" href="/contact">Contact</a>
+            </div>
           </div>
           <div className="space-y-3">
             <p className="font-semibold text-white">Contact</p>
-            <a className="block hover:text-blue-200" href="mailto:contact@tjardoantonie.nl">
-              contact@tjardoantonie.nl
-            </a>
-            <a className="block hover:text-blue-200" href="tel:+31612345678">
-              +31 6 12 34 56 78
-            </a>
-            <p className="text-slate-300">Remote / NL</p>
+            <div className="space-y-2">
+              <a className="block hover:text-blue-200" href="tel:+31612345678">
+                +31 6 12 34 56 78
+              </a>
+              <p className="text-slate-300">Remote / NL</p>
+              <a className="block hover:text-blue-200" href="mailto:contact@tjardoantonie.nl">
+                contact@tjardoantonie.nl
+              </a>
+            </div>
           </div>
           <div className="space-y-3">
             <p className="font-semibold text-white">Volgen</p>
-            <a className="block hover:text-blue-200" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a className="block hover:text-blue-200" href="https://www.github.com" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-            <a className="block hover:text-blue-200" href="https://www.tjardoantonie.nl" target="_blank" rel="noreferrer">
-              Website
-            </a>
+            <div className="space-y-2">
+              <a className="block hover:text-blue-200" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+              <a className="block hover:text-blue-200" href="https://www.github.com" target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+              <a className="block hover:text-blue-200" href="https://www.tjardoantonie.nl" target="_blank" rel="noreferrer">
+                Website
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="mt-10 border-t border-white/10 pt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-xs text-slate-300">
+      <div className="mt-10 border-top border-white/10 pt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-xs text-slate-300">
         <span>© {new Date().getFullYear()} Antonie studio. Alle rechten voorbehouden.</span>
         <div className="flex flex-wrap gap-3">
           <a className="hover:text-blue-200" href="/contact">Privacy / afspraken</a>

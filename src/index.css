@@ -25,3 +25,44 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Dark mode overrides */
+:root {
+  --bg: #f8fafc;
+  --text: #0f172a;
+}
+:root.dark {
+  --bg: #0b1022;
+  --text: #e2e8f0;
+}
+html.dark body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+html.dark .bg-white {
+  background-color: #0f172a !important;
+}
+html.dark .bg-mist {
+  background-color: #0d152f !important;
+}
+html.dark .text-ink {
+  color: #e2e8f0 !important;
+}
+html.dark .text-slate-600,
+html.dark .text-slate-700,
+html.dark .text-slate-800 {
+  color: #cbd5e1 !important;
+}
+html.dark .border-slate-200,
+html.dark .border-soft {
+  border-color: #1f2937 !important;
+}
+html.dark .shadow-soft {
+  box-shadow: 0 18px 45px -25px rgba(0, 0, 0, 0.55) !important;
+}
+html.dark .bg-midnight {
+  background-color: #060b1d !important;
+}
+html.dark .bg-mist\/70 {
+  background-color: rgba(13, 21, 47, 0.7) !important;
+}

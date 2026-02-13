@@ -74,17 +74,17 @@ const TechStack = () => (
       {stackItems.map((item) => (
         <article
           key={item.title}
-          className="group rounded-3xl border border-soft bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-midnight/40 hover:shadow-[0_20px_60px_-30px_rgba(2,8,51,0.45)] hover:bg-gradient-to-b hover:from-white hover:to-mist"
+          className="group rounded-3xl border border-soft bg-white dark:bg-[#0d172f] p-6 shadow-soft transition hover:-translate-y-1 hover:border-midnight/40 dark:hover:border-[#1d2e55] hover:shadow-[0_20px_60px_-30px_rgba(2,8,51,0.45)] hover:bg-gradient-to-b hover:from-white hover:to-mist dark:hover:from-[#0f1d3a] dark:hover:to-[#0a1329] dark:hover:bg-gradient-to-b"
         >
           <div
             className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${item.iconClass} text-sm font-bold tracking-wide text-white shadow-soft transition duration-300 group-hover:scale-105`}
           >
             {item.icon}
           </div>
-          <h3 className="mt-5 text-2xl font-semibold text-ink transition group-hover:text-midnight">
+          <h3 className="mt-5 text-2xl font-semibold text-ink dark:text-slate-100 transition group-hover:text-midnight dark:group-hover:text-slate-50">
             {item.title}
           </h3>
-          <p className="mt-2 text-lg text-slate-600">{item.description}</p>
+          <p className="mt-2 text-lg text-slate-600 dark:text-slate-300">{item.description}</p>
         </article>
       ))}
     </div>

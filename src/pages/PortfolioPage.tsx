@@ -79,8 +79,8 @@ const PortfolioPage = () => {
           </div>
 
           {/* Portfolio slider */}
-          <div className="relative overflow-hidden rounded-[2rem] bg-[#d9d9d9] p-4 sm:p-6">
-            <div className="relative overflow-hidden rounded-3xl bg-white">
+          <div className="relative overflow-hidden rounded-[2rem] bg-[#d9d9d9] dark:bg-[#0a1433] p-4 sm:p-6">
+            <div className="relative overflow-hidden rounded-3xl bg-white dark:bg-[#0c1a3f]">
               <div
                 ref={trackRef}
                 className="flex h-[220px] sm:h-[340px] lg:h-[420px] snap-x snap-mandatory overflow-x-auto scroll-smooth no-scrollbar"
@@ -103,7 +103,7 @@ const PortfolioPage = () => {
             <button
               type="button"
               onClick={prev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/85 px-4 py-3 text-2xl font-semibold text-ink shadow-[0_10px_30px_-18px_rgba(0,0,0,0.45)] transition hover:bg-white sm:left-5"
+              className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/85 dark:bg-[#0b1a3c] dark:text-white px-4 py-3 text-2xl font-semibold text-ink shadow-[0_10px_30px_-18px_rgba(0,0,0,0.45)] transition hover:bg-white dark:hover:bg-[#0d214e] sm:left-5"
               aria-label="Vorige afbeelding"
             >
               {"<"}
@@ -111,7 +111,7 @@ const PortfolioPage = () => {
             <button
               type="button"
               onClick={next}
-              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/85 px-4 py-3 text-2xl font-semibold text-ink shadow-[0_10px_30px_-18px_rgba(0,0,0,0.45)] transition hover:bg-white sm:right-5"
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/85 dark:bg-[#0b1a3c] dark:text-white px-4 py-3 text-2xl font-semibold text-ink shadow-[0_10px_30px_-18px_rgba(0,0,0,0.45)] transition hover:bg-white dark:hover:bg-[#0d214e] sm:right-5"
               aria-label="Volgende afbeelding"
             >
               {">"}
