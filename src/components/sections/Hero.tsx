@@ -52,13 +52,13 @@ const Hero = () => (
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.55, delay: 0.12 }}
-        className="relative rounded-3xl bg-gradient-to-br from-mist to-white border border-soft p-8 shadow-soft"
+        className="relative rounded-3xl bg-gradient-to-br from-mist to-white border border-soft p-8 shadow-soft dark:from-[#0b1836] dark:to-[#0b2148] dark:border-[#123067]"
       >
-        <div className="h-56 sm:h-64 rounded-2xl bg-ink/90 text-white flex flex-col justify-between p-6">
+        <div className="h-56 sm:h-64 rounded-2xl bg-ink/90 dark:bg-[#0d1f3d] text-white flex flex-col justify-between p-6">
           <div className="space-y-2">
             <p className="text-xs uppercase tracking-[0.2em] text-blue-200">Stack</p>
             <p className="text-sm text-blue-100">
-              React Â· TypeScript Â· Tailwind Â· Framer Motion
+              React · TypeScript · Tailwind · Framer Motion
             </p>
           </div>
           <p className="text-lg font-semibold leading-tight">
@@ -72,3 +72,4 @@ const Hero = () => (
 );
 
 export default Hero;
+
