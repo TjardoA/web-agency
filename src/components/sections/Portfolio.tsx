@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import SectionShell from "./SectionShell";
-import { portfolioItems } from "../data";
+import SectionShell from "../ui/SectionShell";
+import { portfolioItems } from "../../data";
 
 type CardProps = {
   title: string;

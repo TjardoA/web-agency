@@ -1,5 +1,5 @@
-import { testimonials } from "../data";
-import SectionShell from "./SectionShell";
+import { testimonials } from "../../data";
+import SectionShell from "../ui/SectionShell";
 import { motion } from "framer-motion";
 
 const Testimonials = () => (

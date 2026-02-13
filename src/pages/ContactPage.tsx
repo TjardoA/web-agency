@@ -1,5 +1,4 @@
-﻿import Layout from "../components/Layout";
-import Button from "../components/Button";
+﻿import { Layout, Button } from "../components";
 
 const ContactPage = () => (
   <Layout>
@@ -14,7 +13,7 @@ const ContactPage = () => (
             </div>
             <h1 className="text-3xl font-semibold text-ink sm:text-4xl">Kom langs of plan een gesprek</h1>
             <p className="text-base text-slate-600 max-w-3xl">
-              Bel, mail of vul het formulier in. Ik reageer binnen één werkdag.
+              Bel, mail of vul het formulier in. Ik reageer binnen ��n werkdag.
             </p>
           </div>
 
@@ -22,26 +21,26 @@ const ContactPage = () => (
             <div className="space-y-5">
               <div className="space-y-3 text-slate-700">
                 <div className="flex items-start gap-3">
-                  <span className="mt-1 text-accent">•</span>
+                  <span className="mt-1 text-accent">�</span>
                   <p>
                     Bel of WhatsApp: <strong className="text-ink">+31 6 12 34 56 78</strong>
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="mt-1 text-accent">•</span>
+                  <span className="mt-1 text-accent">�</span>
                   <p>
                     E-mail: <strong className="text-ink">contact@tjardoantonie.nl</strong>
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="mt-1 text-accent">•</span>
+                  <span className="mt-1 text-accent">�</span>
                   <p>Beschikbaar voor projecten: websites, webshops, koppelingen, performance.</p>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-4">
                 <Button className="px-5 py-2.5">Mail direct</Button>
-                <Button className="px-5 py-2.5 bg-white text-ink !text-ink border border-slate-300 shadow-none hover:bg-slate-50">
+                <Button className="px-5 py-2.5">
                   Bel / WhatsApp
                 </Button>
               </div>
@@ -115,7 +114,7 @@ const ContactPage = () => (
                   <Button type="submit" className="px-7 py-3">
                     Verstuur
                   </Button>
-                  <span className="text-sm text-slate-700">Ik antwoord binnen één werkdag.</span>
+                  <span className="text-sm text-slate-700">Ik antwoord binnen ��n werkdag.</span>
                 </div>
               </form>
             </div>
@@ -165,6 +164,9 @@ const ContactPage = () => (
 );
 
 export default ContactPage;
+
+
+
 
 
 

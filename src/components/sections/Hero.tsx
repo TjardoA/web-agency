@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Button from "./Button";
+import Button from "../ui/Button";
 
 const Hero = () => (
   <section id="home" className="px-4 pt-16 pb-14 sm:pt-20 sm:pb-18 lg:pt-24 lg:pb-20 bg-white">
@@ -34,7 +34,7 @@ const Hero = () => (
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.16 }}
-          className="flex items-center gap-4"
+          className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4"
         >
           <Button
             onClick={() =>

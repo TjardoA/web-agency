@@ -1,5 +1,5 @@
-import { projects } from "../data";
-import SectionShell from "./SectionShell";
+import { projects } from "../../data";
+import SectionShell from "../ui/SectionShell";
 import { motion } from "framer-motion";
 
 const Projects = () => (

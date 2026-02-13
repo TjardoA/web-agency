@@ -1,4 +1,4 @@
-import SectionShell from "./SectionShell";
+import SectionShell from "../ui/SectionShell";
 
 const items = [
   {
@@ -41,26 +41,6 @@ const TechApproach = () => (
           <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.description}</p>
         </article>
       ))}
-    </div>
-
-    <div className="rounded-3xl border border-midnightSoft bg-midnight p-6 text-white shadow-soft sm:p-8">
-      <h3 className="text-2xl font-semibold">Een greep uit mijn services</h3>
-      <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((service) => (
-          <div
-            key={service}
-            className="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-medium text-white"
-          >
-            {service}
-          </div>
-        ))}
-      </div>
-      <a
-        href="/#contact"
-        className="mt-6 inline-flex items-center rounded-full bg-white px-5 py-2.5 text-sm font-medium text-midnight shadow-soft transition hover:bg-slate-100"
-      >
-        Plan een technische kennismaking
-      </a>
     </div>
   </SectionShell>
 );

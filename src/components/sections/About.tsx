@@ -1,4 +1,5 @@
-import SectionShell from "./SectionShell";
+import SectionShell from "../ui/SectionShell";
+import Button from "../ui/Button";
 
 const About = () => (
   <SectionShell
@@ -15,6 +16,9 @@ const About = () => (
         Mijn aanpak: strategie, wireframes, design systems en vervolgens strakke implementatie met
         herbruikbare componenten, semantische HTML en SEO-best practices.
       </p>
+      <Button className="mt-2" onClick={() => (window.location.href = "/portfolio")}>
+        Lees meer
+      </Button>
     </div>
   </SectionShell>
 );

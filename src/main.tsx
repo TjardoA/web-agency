@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import PortfolioPage from "./pages/PortfolioPage";
 import ContactPage from "./pages/ContactPage";
+import ServicesPage from "./pages/ServicesPage";
 import "./index.css";
 
 const cleanPath = window.location.pathname.replace(/\/+$/, "") || "/";
@@ -11,7 +12,9 @@ const Page =
     ? PortfolioPage
     : cleanPath === "/contact"
       ? ContactPage
-      : App;
+      : cleanPath === "/diensten"
+        ? ServicesPage
+        : App;
 
 ReactDOM.createRoot(document.getElementById("app") as HTMLElement).render(
   <React.StrictMode>

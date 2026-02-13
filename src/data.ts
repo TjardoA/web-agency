@@ -16,6 +16,10 @@ export const services: Service[] = [
   {
     title: "Landing Pages",
     description: "Laser-focused landings voor campagnes met snelle laadtijden."
+  },
+  {
+    title: "Webshops",
+    description: "Conversiegerichte webshops met snelle checkout en slimme koppelingen."
   }
 ];
 

@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
-import SectionShell from "./SectionShell";
-import Button from "./Button";
+import SectionShell from "../ui/SectionShell";
+import Button from "../ui/Button";
 
 const Contact = () => {
   const [status, setStatus] = useState<"idle" | "error" | "sent">("idle");
