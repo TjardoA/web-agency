@@ -1,11 +1,13 @@
-import { useState, useRef } from "react";
+﻿import { useState, useRef } from "react";
 import { Layout } from "../components";
+import { motion } from "framer-motion";
+import { fadeUp, stagger } from "../animations/motion";
 
-const slides = [
-  "/porfolio_front.png",
-  "/porfolio_aboutme.png",
-  "/portfolio_projects.png",
-];
+const slides = ["/porfolio_front.png", "/porfolio_aboutme.png", "/portfolio_projects.png"];
+
+const AnimatedParagraph = ({ text }: { text: string }) => (
+  <p className="text-base leading-relaxed text-slate-800">{text}</p>
+);
 
 const PortfolioPage = () => {
   const [index, setIndex] = useState(0);
@@ -33,69 +35,68 @@ const PortfolioPage = () => {
   return (
     <Layout>
       <section className="px-4 py-10 sm:py-14">
-        <div className="mx-auto max-w-6xl space-y-10">
-          {/* Over mij intro boven portfolio */}
-          <div className="rounded-3xl border border-soft bg-white p-8 shadow-soft sm:p-10 space-y-4">
-            <p className="text-sm uppercase tracking-[0.22em] text-accent">
-              Over mij
-            </p>
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-              Wie ik ben in het kort
-            </h1>
-            <div className="grid gap-4 lg:grid-cols-[1.3fr_0.7fr] items-start">
-              <div className="space-y-3 text-base leading-relaxed text-slate-800">
-                <p>
-                  Ik werk als ontwikkelaar en ontwerper die houdt van snelle,
-                  heldere websites. Strategie, UX en performance komen altijd
-                  samen in mijn trajecten zodat een site niet alleen mooi is
-                  maar ook converteert.
-                </p>
-                <p>
-                  Meestal start ik met een korte technische scan en een
-                  designrichting. Daarna bouw ik modulair, met oog voor
-                  toegankelijkheid en SEO. Zo kunnen we makkelijk
-                  doorontwikkelen als je bedrijf groeit.
-                </p>
-                <p>
-                  Hieronder zie je een paar voorbeelden. Voor meer context of
-                  cases neem ik je graag mee in een demo-call.
-                </p>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={stagger}
+          className="mx-auto max-w-6xl space-y-10"
+        >
+          <motion.div variants={cardShell} className="rounded-3xl border border-soft bg-white p-8 shadow-soft sm:p-10 space-y-4">
+            <p className="text-sm uppercase tracking-[0.22em] text-accent">Over mij</p>
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Wie ik ben in het kort</h1>
+            <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] items-start">
+              <div className="space-y-3">
+                <AnimatedParagraph text="Ik werk als ontwikkelaar en ontwerper die houdt van snelle, heldere websites. Strategie, UX en performance komen altijd samen in mijn trajecten zodat een site niet alleen mooi is maar ook converteert." />
+                <AnimatedParagraph text="Meestal start ik met een korte technische scan en een designrichting. Daarna bouw ik modulair, met oog voor toegankelijkheid en SEO. Zo kunnen we makkelijk doorontwikkelen als je bedrijf groeit." />
+                <AnimatedParagraph text="Hieronder zie je een paar voorbeelden. Voor meer context of cases neem ik je graag mee in een demo-call." />
               </div>
-              <div className="rounded-2xl border border-soft bg-mist/70 p-5 text-sm text-slate-700 space-y-2">
-                <div className="flex items-center justify-between">
-                  <span className="font-semibold text-ink">Focus</span>
-                  <span>Webdesign & development</span>
+              <motion.div
+                variants={fadeUp}
+                className="relative h-full w-full rounded-2xl border border-soft bg-gradient-to-br from-mist to-white p-4 shadow-[0_18px_60px_-40px_rgba(15,23,42,0.25)] flex flex-col justify-start lg:-mt-6"
+              >
+                <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-200">
+                  <img
+                    src="/profile.jpg"
+                    alt="Jouw foto"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = "/profile-placeholder.png";
+                    }}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-semibold text-ink">Samenwerking</span>
-                  <span>Remote / NL</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-semibold text-ink">Project start</span>
-                  <span>Binnen 2-3 weken</span>
-                </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Portfolio slider */}
-          <div className="relative overflow-hidden rounded-[2rem] bg-[#d9d9d9] dark:bg-[#0a1433] p-4 sm:p-6">
+          <motion.div
+            variants={cardShell}
+            className="relative overflow-hidden rounded-[2rem] bg-[#d9d9d9] dark:bg-[#0a1433] p-4 sm:p-6"
+          >
             <div className="relative overflow-hidden rounded-3xl bg-white dark:bg-[#0c1a3f]">
               <div
                 ref={trackRef}
                 className="flex h-[220px] sm:h-[340px] lg:h-[420px] snap-x snap-mandatory overflow-x-auto scroll-smooth no-scrollbar"
               >
                 {slides.map((src, i) => (
-                  <div
+                  <motion.div
                     key={src + i}
                     className="relative min-w-full snap-center"
+                    initial={{ opacity: 0, scale: 0.96 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.45, delay: i * 0.08 }}
+                    viewport={{ once: true }}
                   >
-                    <img
+                    <motion.img
                       src={src}
                       alt={`Portfolio beeld ${i + 1}`}
                       className="h-full w-full object-cover"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 220, damping: 18 }}
                     />
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -116,40 +117,35 @@ const PortfolioPage = () => {
             >
               {">"}
             </button>
-          </div>
+          </motion.div>
 
-          <div className="space-y-6">
+          <motion.div variants={cardShell} className="space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                Mijn portfolio
-              </h2>
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Mijn portfolio</h2>
               <div className="flex flex-wrap gap-3">
-                <span className="rounded-full bg-midnight px-4 py-1.5 text-xl font-medium text-white">
-                  #Portfolio
-                </span>
-                <span className="rounded-full bg-midnight px-4 py-1.5 text-xl font-medium text-white">
-                  #Webdesign
-                </span>
-                <span className="rounded-full bg-midnight px-4 py-1.5 text-xl font-medium text-white">
-                  #Development
-                </span>
+                {["Portfolio", "Webdesign", "Development"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-midnight px-4 py-1.5 text-xl font-medium text-white"
+                  >
+                    #{tag}
+                  </span>
+                ))}
               </div>
             </div>
 
             <div className="max-w-5xl space-y-5 text-lg leading-relaxed text-slate-800">
               <p>
-                Een korte greep uit recent werk. Ik wissel tussen product-,
-                service- en storytelling-pages en zorg dat de performance en
-                toegankelijkheid op orde zijn.
+                Een korte greep uit recent werk. Ik wissel tussen product-, service- en storytelling-pages en zorg dat
+                de performance en toegankelijkheid op orde zijn.
               </p>
               <p>
-                Per project werk ik met duidelijke milestones: ontwerp, build,
-                QA en performance-check. We shippen in kleine iteraties zodat je
-                snel kunt testen met echte gebruikers.
+                Per project werk ik met duidelijke milestones: ontwerp, build, QA en performance-check. We shippen in
+                kleine iteraties zodat je snel kunt testen met echte gebruikers.
               </p>
               <p>
-                Zin om voorbeelden te zien die passen bij jouw branche? Plan
-                gerust een call, dan loop ik je er live doorheen.
+                Zin om voorbeelden te zien die passen bij jouw branche? Plan gerust een call, dan loop ik je er live
+                doorheen.
               </p>
             </div>
 
@@ -161,11 +157,16 @@ const PortfolioPage = () => {
             >
               Bekijk portfolio
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
     </Layout>
   );
+};
+
+const cardShell = {
+  hidden: { opacity: 0, y: 26 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55 } }
 };
 
 export default PortfolioPage;

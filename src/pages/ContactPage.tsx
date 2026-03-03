@@ -1,63 +1,72 @@
 ﻿import { Layout, Button } from "../components";
+import { motion } from "framer-motion";
+import { fadeUp, stagger } from "../animations/motion";
+
+const card = { hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } };
 
 const ContactPage = () => (
   <Layout>
     <section className="bg-gradient-to-b from-[#fffaf5] to-[#eef3ff] dark:from-[#0a0f20] dark:to-[#0b132e] px-4 py-12 sm:py-14 lg:py-16">
       <div className="mx-auto max-w-6xl space-y-12">
-        {/* Header + form combined */}
-        <div className="rounded-[26px] border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#0f172a] p-10 shadow-[0_30px_80px_-32px_rgba(15,23,42,0.22)] sm:p-12 space-y-10">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={stagger}
+          className="rounded-[26px] border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#0f172a] p-10 shadow-[0_30px_80px_-32px_rgba(15,23,42,0.22)] sm:p-12 space-y-10"
+        >
           <div className="space-y-3">
-            <div className="flex items-center gap-2 text-accent text-sm font-semibold tracking-[0.22em] uppercase">
+            <motion.div variants={fadeUp} className="flex items-center gap-2 text-accent text-sm font-semibold tracking-[0.22em] uppercase">
               <span>*</span>
               <span>Contact</span>
-            </div>
-            <h1 className="text-3xl font-semibold text-ink dark:text-slate-50 sm:text-4xl">
+            </motion.div>
+            <motion.h1 variants={fadeUp} className="text-3xl font-semibold text-ink dark:text-slate-50 sm:text-4xl">
               Kom langs of plan een gesprek
-            </h1>
-            <p className="text-base text-slate-600 dark:text-slate-300 max-w-3xl">
+            </motion.h1>
+            <motion.p variants={fadeUp} className="text-base text-slate-600 dark:text-slate-300 max-w-3xl">
               Bel, mail of vul het formulier in. Ik reageer binnen één werkdag.
-            </p>
+            </motion.p>
           </div>
 
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] items-start">
-            <div className="space-y-5">
+            <motion.div variants={stagger} className="space-y-5" initial="hidden" whileInView="show" viewport={{ once: true, margin: "-60px" }}>
               <div className="space-y-3 text-slate-700 dark:text-slate-200">
-                <div className="flex items-start gap-3">
-                  <span className="mt-1 text-accent">•</span>
-                  <p className="text-slate-700 dark:text-slate-200">
-                    Bel of WhatsApp: <strong className="text-ink dark:text-white">+31 6 12 34 56 78</strong>
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="mt-1 text-accent">•</span>
-                  <p className="text-slate-700 dark:text-slate-200">
-                    E-mail: <strong className="text-ink dark:text-white">contact@tjardoantonie.nl</strong>
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="mt-1 text-accent">•</span>
-                  <p className="text-slate-700 dark:text-slate-200">
-                    Beschikbaar voor projecten: websites, webshops, koppelingen, performance.
-                  </p>
-                </div>
+                {["Bel of WhatsApp: +31 6 12 34 56 78", "E-mail: contact@tjardoantonie.nl", "Beschikbaar voor projecten: websites, webshops, koppelingen, performance."].map((text) => (
+                  <motion.div key={text} variants={fadeUp} className="flex items-start gap-3">
+                    <span className="mt-1 text-accent">•</span>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      {text.includes(":") ? (
+                        <>
+                          {text.split(": ")[0]}: <strong className="text-ink dark:text-white">{text.split(": ")[1]}</strong>
+                        </>
+                      ) : text}
+                    </p>
+                  </motion.div>
+                ))}
               </div>
 
-              <div className="flex flex-wrap gap-4">
+              <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
                 <Button className="px-5 py-2.5">Mail direct</Button>
-                <Button className="px-5 py-2.5">
-                  Bel / WhatsApp
-                </Button>
-              </div>
+                <Button className="px-5 py-2.5">Bel / WhatsApp</Button>
+              </motion.div>
 
-              <div className="space-y-3">
-              <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-mist dark:bg-[#111a30] p-6 text-sm text-slate-700 dark:text-slate-200">
-                Startdatum: binnen 2-3 weken mogelijk
-              </div>
-              <div className="inline-flex w-auto rounded-2xl border border-slate-200 dark:border-slate-700 bg-mist dark:bg-[#111a30] px-6 py-4 text-sm text-slate-700 dark:text-slate-200 max-w-sm"> Locatie: Remote / NL </div>
-            </div>
-            </div>
+              <motion.div variants={stagger} initial="hidden" animate="show" className="space-y-3">
+                <motion.div variants={fadeUp} className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-mist dark:bg-[#111a30] p-6 text-sm text-slate-700 dark:text-slate-200">
+                  Startdatum: binnen 2-3 weken mogelijk
+                </motion.div>
+                <motion.div variants={fadeUp} className="inline-flex w-auto rounded-2xl border border-slate-200 dark:border-slate-700 bg-mist dark:bg-[#111a30] px-6 py-4 text-sm text-slate-700 dark:text-slate-200 max-w-sm">
+                  Locatie: Remote / NL
+                </motion.div>
+              </motion.div>
+            </motion.div>
 
-            <div className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#0f172a] p-8 shadow-soft space-y-7 sm:p-10">
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={card}
+              className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#0f172a] p-8 shadow-soft space-y-7 sm:p-10"
+            >
               <form className="grid gap-7">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <label className="text-sm font-medium text-ink dark:text-slate-100 space-y-1">
@@ -121,24 +130,36 @@ const ContactPage = () => (
                   <span className="text-sm text-slate-700 dark:text-slate-300">Ik antwoord binnen één werkdag.</span>
                 </div>
               </form>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Contact cards */}
-        <div className="grid gap-10 sm:grid-cols-2">
-          <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-mist dark:bg-[#111a30] p-10 shadow-soft">
-            <p className="text-sm font-semibold text-ink dark:text-slate-100">Bel of WhatsApp</p>
-            <p className="mt-1 text-base text-slate-700 dark:text-slate-200">+31 6 12 34 56 78</p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-mist dark:bg-[#111a30] p-10 shadow-soft">
-            <p className="text-sm font-semibold text-ink dark:text-slate-100">Mail</p>
-            <p className="mt-1 text-base text-slate-700 dark:text-slate-200">contact@tjardoantonie.nl</p>
-          </div>
-        </div>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={stagger}
+          className="grid gap-10 sm:grid-cols-2"
+        >
+          {[{ title: "Bel of WhatsApp", value: "+31 6 12 34 56 78" }, { title: "Mail", value: "contact@tjardoantonie.nl" }].map((item) => (
+            <motion.div
+              key={item.title}
+              variants={card}
+              className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-mist dark:bg-[#111a30] p-10 shadow-soft"
+            >
+              <p className="text-sm font-semibold text-ink dark:text-slate-100">{item.title}</p>
+              <p className="mt-1 text-base text-slate-700 dark:text-slate-200">{item.value}</p>
+            </motion.div>
+          ))}
+        </motion.div>
 
-        {/* Availability */}
-        <div className="rounded-[28px] border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#0f172a] p-10 shadow-[0_30px_80px_-32px_rgba(15,23,42,0.22)] sm:p-12 space-y-8">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={card}
+          className="rounded-[28px] border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#0f172a] p-10 shadow-[0_30px_80px_-32px_rgba(15,23,42,0.22)] sm:p-12 space-y-8"
+        >
           <div className="space-y-2">
             <p className="text-sm uppercase tracking-[0.24em] text-accent">Beschikbaarheid</p>
             <h2 className="text-2xl sm:text-3xl font-semibold text-ink dark:text-slate-50">
@@ -164,18 +185,10 @@ const ContactPage = () => (
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   </Layout>
 );
 
 export default ContactPage;
-
-
-
-
-
-
-
-
