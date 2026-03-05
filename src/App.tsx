@@ -5,7 +5,7 @@ import {
   Services,
   TechApproach,
   TechStack,
-  Projects,
+  FeaturedCase,
   Testimonials
 } from "./components";
 
@@ -16,7 +16,7 @@ const App = () => (
     <Services />
     <TechApproach />
     <TechStack />
-    <Projects />
+    <FeaturedCase />
     <Testimonials />
   </Layout>
 );

@@ -120,12 +120,12 @@ const faqs = [
 
 const slideLeft = {
   hidden: { opacity: 0, x: -60 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }
+  show: { opacity: 1, x: 0, transition: { duration: 1.25, ease: [0.18, 0.9, 0.2, 1] } }
 };
 
 const slideRight = {
   hidden: { opacity: 0, x: 60 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }
+  show: { opacity: 1, x: 0, transition: { duration: 1.25, ease: [0.18, 0.9, 0.2, 1] } }
 };
 
 const Icon = ({ name }: { name: Step["icon"] }) => {

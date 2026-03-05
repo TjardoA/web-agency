@@ -10,6 +10,7 @@ export { default as About } from "./sections/About";
 export { default as Services } from "./sections/Services";
 export { default as TechApproach } from "./sections/TechApproach";
 export { default as TechStack } from "./sections/TechStack";
+export { default as FeaturedCase } from "./sections/FeaturedCase";
 export { default as Projects } from "./sections/Projects";
 export { default as Testimonials } from "./sections/Testimonials";
 export { default as Contact } from "./sections/Contact";

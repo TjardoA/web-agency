@@ -62,21 +62,22 @@ export const portfolioItems: PortfolioItem[] = [
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Sanne Jansen",
-    role: "Marketing Lead",
-    company: "BrightGrow",
-    quote: "Strakke oplevering, uitstekende performance en duidelijke communicatie."
+    name: "Lisa van den Berg",
+    role: "CEO",
+    company: "TechStart",
+    quote:
+      "Onze website conversie steeg met 40% na de redesign. Het team begreep precies wat we nodig hadden."
   },
   {
-    name: "David Vermeer",
+    name: "Mark Jansen",
     role: "Founder",
-    company: "Scaleup Labs",
-    quote: "Onze nieuwe site voelt premium en converteert beter dan ooit."
+    company: "Creative Studio",
+    quote: "Professioneel, transparant en resultaatgericht. Precies zoals beloofd. Aanrader!"
   },
   {
-    name: "Lotte de Vries",
-    role: "COO",
-    company: "Northwind",
-    quote: "Professioneel proces en moderne uitstraling. Aanrader."
+    name: "Sarah de Vries",
+    role: "Marketing Manager",
+    company: "GrowthCo",
+    quote: "Eindelijk een agency die verder kijkt dan alleen design. De SEO resultaten zijn fenomenaal."
   }
 ];
