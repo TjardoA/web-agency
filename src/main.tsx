@@ -7,6 +7,8 @@ import ContactPage from "./pages/ContactPage";
 import ServicesPage from "./pages/ServicesPage";
 import DevelopmentPage from "./pages/DevelopmentPage";
 import PricingPage from "./pages/PricingPage";
+import WerkwijzePage from "./pages/WerkwijzePage";
+import ProjectsPage from "./pages/ProjectsPage";
 import "./index.css";
 
 const cleanPath = window.location.pathname.replace(/\/+$/, "") || "/";
@@ -21,7 +23,11 @@ const Page =
           ? DevelopmentPage
           : cleanPath === "/tarieven"
             ? PricingPage
-            : App;
+            : cleanPath === "/werkwijze"
+              ? WerkwijzePage
+              : cleanPath === "/projecten" || cleanPath === "/projects"
+                ? ProjectsPage
+                : App;
 
 ReactDOM.createRoot(document.getElementById("app") as HTMLElement).render(
   <React.StrictMode>

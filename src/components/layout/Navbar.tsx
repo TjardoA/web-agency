@@ -5,8 +5,9 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/portfolio#about", label: "Over mij" },
   { href: "/diensten", label: "Diensten" },
+  { href: "/projecten", label: "Projecten" },
   { href: "/tarieven", label: "Tarieven" },
-  { href: "/development", label: "Development" },
+  { href: "/werkwijze", label: "Werkwijze" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -67,7 +68,9 @@ const Navbar = () => {
           <button
             type="button"
             onClick={() => setDark((v) => !v)}
-            aria-label={dark ? "Schakel naar licht thema" : "Schakel naar donker thema"}
+            aria-label={
+              dark ? "Schakel naar licht thema" : "Schakel naar donker thema"
+            }
             className="flex items-center gap-2 rounded-full border border-white/30 px-3 py-1.5 text-xs font-semibold text-white hover:bg-white/10 transition"
           >
             <img
@@ -91,28 +94,32 @@ const Navbar = () => {
           >
             <div className="mx-auto max-w-6xl px-4 py-4 space-y-3">
               {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="block rounded-lg px-3 py-2 text-sm font-medium text-white transition hover:bg-white/5"
-                onClick={() => setOpen(false)}
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="block rounded-lg px-3 py-2 text-sm font-medium text-white transition hover:bg-white/5"
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <button
+                type="button"
+                onClick={() => setDark((v) => !v)}
+                aria-label={
+                  dark
+                    ? "Schakel naar licht thema"
+                    : "Schakel naar donker thema"
+                }
+                className="mt-2 w-full rounded-lg border border-white/20 px-3 py-2 text-sm font-semibold text-white hover:bg-white/10 transition flex items-center gap-2"
               >
-                {link.label}
-              </a>
-            ))}
-            <button
-              type="button"
-              onClick={() => setDark((v) => !v)}
-              aria-label={dark ? "Schakel naar licht thema" : "Schakel naar donker thema"}
-              className="mt-2 w-full rounded-lg border border-white/20 px-3 py-2 text-sm font-semibold text-white hover:bg-white/10 transition flex items-center gap-2"
-            >
-              <img
-                src={dark ? "/lightmode.png" : "/darkmode.png"}
-                alt=""
-                className="h-5 w-5 object-contain"
-              />
-              <span>{dark ? "Light mode" : "Dark mode"}</span>
-            </button>
+                <img
+                  src={dark ? "/lightmode.png" : "/darkmode.png"}
+                  alt=""
+                  className="h-5 w-5 object-contain"
+                />
+                <span>{dark ? "Light mode" : "Dark mode"}</span>
+              </button>
             </div>
           </motion.nav>
         )}
