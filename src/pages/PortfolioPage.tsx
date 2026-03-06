@@ -1,7 +1,8 @@
 ﻿import { useState, useRef } from "react";
-import { Layout } from "../components";
+import { Layout, Button } from "../components";
 import { motion } from "framer-motion";
 import { fadeUp, stagger } from "../animations/motion";
+import { portfolioItems } from "../data";
 
 const slides = ["/porfolio_front.png", "/porfolio_aboutme.png", "/portfolio_projects.png"];
 
@@ -50,6 +51,9 @@ const PortfolioPage = () => {
                 <AnimatedParagraph text="Ik werk als ontwikkelaar en ontwerper die houdt van snelle, heldere websites. Strategie, UX en performance komen altijd samen in mijn trajecten zodat een site niet alleen mooi is maar ook converteert." />
                 <AnimatedParagraph text="Meestal start ik met een korte technische scan en een designrichting. Daarna bouw ik modulair, met oog voor toegankelijkheid en SEO. Zo kunnen we makkelijk doorontwikkelen als je bedrijf groeit." />
                 <AnimatedParagraph text="Hieronder zie je een paar voorbeelden. Voor meer context of cases neem ik je graag mee in een demo-call." />
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <Button className="px-6 py-3">Plan een kennismaking</Button>
+                </div>
               </div>
               <motion.div
                 variants={fadeUp}
@@ -73,9 +77,9 @@ const PortfolioPage = () => {
 
           <motion.div
             variants={cardShell}
-            className="relative overflow-hidden rounded-[2rem] bg-[#d9d9d9] dark:bg-[#0a1433] p-4 sm:p-6"
+            className="relative overflow-hidden rounded-[2rem] bg-[#d9d9d9]  p-4 sm:p-6"
           >
-            <div className="relative overflow-hidden rounded-3xl bg-white dark:bg-[#0c1a3f]">
+            <div className="relative overflow-hidden rounded-3xl bg-white ">
               <div
                 ref={trackRef}
                 className="flex h-[220px] sm:h-[340px] lg:h-[420px] snap-x snap-mandatory overflow-x-auto scroll-smooth no-scrollbar"
@@ -104,7 +108,7 @@ const PortfolioPage = () => {
             <button
               type="button"
               onClick={prev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/85 dark:bg-[#0b1a3c] dark:text-white px-4 py-3 text-2xl font-semibold text-ink shadow-[0_10px_30px_-18px_rgba(0,0,0,0.45)] transition hover:bg-white dark:hover:bg-[#0d214e] sm:left-5"
+              className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/85   px-4 py-3 text-2xl font-semibold text-ink shadow-[0_10px_30px_-18px_rgba(0,0,0,0.45)] transition hover:bg-white  sm:left-5"
               aria-label="Vorige afbeelding"
             >
               {"<"}
@@ -112,7 +116,7 @@ const PortfolioPage = () => {
             <button
               type="button"
               onClick={next}
-              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/85 dark:bg-[#0b1a3c] dark:text-white px-4 py-3 text-2xl font-semibold text-ink shadow-[0_10px_30px_-18px_rgba(0,0,0,0.45)] transition hover:bg-white dark:hover:bg-[#0d214e] sm:right-5"
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/85   px-4 py-3 text-2xl font-semibold text-ink shadow-[0_10px_30px_-18px_rgba(0,0,0,0.45)] transition hover:bg-white  sm:right-5"
               aria-label="Volgende afbeelding"
             >
               {">"}
@@ -136,16 +140,17 @@ const PortfolioPage = () => {
 
             <div className="max-w-5xl space-y-5 text-lg leading-relaxed text-slate-800">
               <p>
-                Een korte greep uit recent werk. Ik wissel tussen product-, service- en storytelling-pages en zorg dat
-                de performance en toegankelijkheid op orde zijn.
+                Mijn portfolio is opgebouwd uit projecten die laten zien hoe ik verhaal, UX en performance samenbreng. Elke case heeft
+                een heldere verhaallijn, sterke typografie, micro-animaties met framer-motion en meetbare verbeteringen (snelheid,
+                conversie of engagement).
               </p>
               <p>
-                Per project werk ik met duidelijke milestones: ontwerp, build, QA en performance-check. We shippen in
-                kleine iteraties zodat je snel kunt testen met echte gebruikers.
+                De opbouw is modulair: hero, proof, aanbod, cases, CTA’s en FAQ/flow-secties die we kunnen herschikken of dupliceren voor
+                varianten. Voor B2B leg ik nadruk op trust & structuur, voor e‑commerce op checkoutflow en snelheid, voor makers op beeld
+                en storytelling.
               </p>
               <p>
-                Zin om voorbeelden te zien die passen bij jouw branche? Plan gerust een call, dan loop ik je er live
-                doorheen.
+                Wil je zien hoe dat eruitziet of wat het oplevert? Meer interesse? Kijk mijn portfolio.
               </p>
             </div>
 
@@ -153,9 +158,9 @@ const PortfolioPage = () => {
               href="https://www.tjardoantonie.nl/"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center rounded-full bg-accent px-6 py-3 text-base font-medium text-white shadow-soft transition hover:brightness-95"
+              className="inline-flex items-center rounded-full bg-midnight px-6 py-3 text-base font-medium text-white shadow-soft transition hover:brightness-95"
             >
-              Bekijk portfolio
+              Mijn portfolio
             </a>
           </motion.div>
         </motion.div>
@@ -170,3 +175,8 @@ const cardShell = {
 };
 
 export default PortfolioPage;
+
+
+
+
+

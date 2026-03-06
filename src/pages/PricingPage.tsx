@@ -159,7 +159,7 @@ const PricingPage = () => (
             {pkg.featured && (
               <div className="absolute left-1/2 -top-6 -translate-x-1/2">
                 <span className="inline-flex items-center gap-2 rounded-full bg-[#0b1230] px-4 py-1 text-xs font-semibold text-white shadow-[0_18px_38px_-22px_rgba(15,23,42,0.55)] ring-2 ring-white">
-                  <span className="text-amber-400">★</span> Meest gekozen
+                  <span className="text-amber-400">?</span> Meest gekozen
                 </span>
               </div>
             )}
@@ -240,7 +240,7 @@ const PricingPage = () => (
         <motion.div variants={fadeUp} className="space-y-6 rounded-[22px] border border-slate-200 bg-white p-6 shadow-[0_24px_70px_-52px_rgba(15,23,42,0.25)]">
           <div className="flex items-center gap-3">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-midnight text-white text-sm font-semibold">
-              ✓
+              ?
             </span>
             <div className="space-y-1">
               <h2 className="text-2xl font-semibold text-ink">Altijd inbegrepen</h2>
@@ -307,3 +307,7 @@ const PricingPage = () => (
 );
 
 export default PricingPage;
+
+
+
+

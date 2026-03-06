@@ -6,6 +6,10 @@ import PortfolioPage from "./pages/PortfolioPage";
 import ContactPage from "./pages/ContactPage";
 import ServicesPage from "./pages/ServicesPage";
 import DevelopmentPage from "./pages/DevelopmentPage";
+import CorporateSitesPage from "./pages/CorporateSitesPage";
+import LandingPagesPage from "./pages/LandingPagesPage";
+import WebshopsPage from "./pages/WebshopsPage";
+import PortfolioSitesPage from "./pages/PortfolioSitesPage";
 import PricingPage from "./pages/PricingPage";
 import WerkwijzePage from "./pages/WerkwijzePage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -21,6 +25,14 @@ const Page =
         ? ServicesPage
         : cleanPath === "/development"
           ? DevelopmentPage
+          : cleanPath === "/bedrijfswebsites"
+            ? CorporateSitesPage
+            : cleanPath === "/landing-pages"
+              ? LandingPagesPage
+              : cleanPath === "/portfolio-websites"
+                ? PortfolioSitesPage
+              : cleanPath === "/webshops"
+                ? WebshopsPage
           : cleanPath === "/tarieven"
             ? PricingPage
             : cleanPath === "/werkwijze"

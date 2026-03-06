@@ -1,25 +1,30 @@
-import { Service, Project, PortfolioItem, Testimonial } from "./types";
+﻿import { Service, Project, PortfolioItem, Testimonial } from "./types";
 
 export const services: Service[] = [
   {
     title: "Webdesign & Development",
-    description: "Van strategie tot oplevering: pixel-perfect, snel en schaalbaar."
+    description: "Van strategie tot oplevering: pixel-perfect, snel en schaalbaar.",
+    path: "/development"
   },
   {
     title: "Portfolio Websites",
-    description: "Minimalistische portfolio’s die jouw verhaal en werk laten schitteren."
+    description: "Minimalistische portfolio's die jouw verhaal en werk laten schitteren.",
+    path: "/portfolio-websites"
   },
   {
     title: "Bedrijfswebsites",
-    description: "Heldere conversiegerichte sites die vertrouwen wekken bij klanten."
+    description: "Heldere conversiegerichte sites die vertrouwen wekken bij klanten.",
+    path: "/bedrijfswebsites"
   },
   {
     title: "Landing Pages",
-    description: "Laser-focused landings voor campagnes met snelle laadtijden."
+    description: "Laser-focused landings voor campagnes met snelle laadtijden.",
+    path: "/landing-pages"
   },
   {
     title: "Webshops",
-    description: "Conversiegerichte webshops met snelle checkout en slimme koppelingen."
+    description: "Conversiegerichte webshops met snelle checkout en slimme koppelingen.",
+    path: "/webshops"
   }
 ];
 

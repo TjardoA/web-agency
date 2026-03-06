@@ -1,4 +1,4 @@
-import { Layout, Button } from "../components";
+﻿import { Layout, Button } from "../components";
 import { motion } from "framer-motion";
 import { fadeUp, stagger } from "../animations/motion";
 
@@ -151,13 +151,7 @@ const ProjectsPage = () => (
           Cases die design, performance en resultaat verbinden
         </motion.h1>
         <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-3">
-          <Button>Plan een gesprek</Button>
-          <a
-            href="/contact"
-            className="inline-flex items-center rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-ink transition hover:border-midnight/40"
-          >
-            Download one-pager
-          </a>
+          {/* CTA's verwijderd op verzoek */}
         </motion.div>
       </motion.div>
     </section>
@@ -228,7 +222,7 @@ const ProjectsPage = () => (
           </p>
           <ul className="space-y-2 text-sm text-slate-700">
             <li className="flex items-start gap-2">
-              <span className="mt-1 text-accent">•</span> Kick-off, scope en KPI’s
+              <span className="mt-1 text-accent">•</span> Kick-off, scope en KPI's
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 text-accent">•</span> UX, UI, content en build parallel
@@ -277,3 +271,7 @@ const ProjectsPage = () => (
 );
 
 export default ProjectsPage;
+
+
+
+

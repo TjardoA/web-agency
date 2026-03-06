@@ -1,6 +1,8 @@
-import { Layout, Button } from "../components";
-import { motion } from "framer-motion";
+﻿import { Layout, Button } from "../components";
+import { motion, easeInOut, Variants } from "framer-motion";
 import { fadeUp, stagger } from "../animations/motion";
+
+const customEase = [0.18, 0.9, 0.2, 1];
 
 type Step = {
   id: number;
@@ -32,7 +34,7 @@ const steps: Step[] = [
     id: 2,
     title: "Ontwerp",
     description:
-      "Op basis van de strategie creëren we een custom design dat perfect aansluit bij jouw merkidentiteit en de gebruiker centraal stelt.",
+      "Op basis van de strategie creÃ«ren we een custom design dat perfect aansluit bij jouw merkidentiteit en de gebruiker centraal stelt.",
     bullets: [
       "Wireframes & structuur",
       "Visueel design concept",
@@ -94,7 +96,7 @@ const perks = [
   { title: "Dedicated Team", desc: "Je werkt direct met de makers. Geen tussenpersonen.", icon: "👥" },
   { title: "Duidelijke Planning", desc: "Transparante communicatie en realistische deadlines.", icon: "🗓️" },
   { title: "Documentatie", desc: "Handleidingen en instructies voor beheer.", icon: "📄" },
-  { title: "Quality Assurance", desc: "Grondig testen op devices en browsers.", icon: "✅" },
+  { title: "Quality Assurance", desc: "Grondig testen op devices en browsers.", icon: "✔" },
   { title: "Continue Support", desc: "3 maanden support na oplevering.", icon: "💬" },
   { title: "Groeimogelijkheden", desc: "Schaalbare oplossingen die meebewegen.", icon: "📈" }
 ];
@@ -118,14 +120,14 @@ const faqs = [
   }
 ];
 
-const slideLeft = {
+const slideLeft: Variants = {
   hidden: { opacity: 0, x: -60 },
-  show: { opacity: 1, x: 0, transition: { duration: 1.25, ease: [0.18, 0.9, 0.2, 1] } }
+  show: { opacity: 1, x: 0, transition: { duration: 1.25, ease: easeInOut } }
 };
 
-const slideRight = {
+const slideRight: Variants = {
   hidden: { opacity: 0, x: 60 },
-  show: { opacity: 1, x: 0, transition: { duration: 1.25, ease: [0.18, 0.9, 0.2, 1] } }
+  show: { opacity: 1, x: 0, transition: { duration: 1.25, ease: easeInOut } }
 };
 
 const Icon = ({ name }: { name: Step["icon"] }) => {
@@ -222,7 +224,7 @@ const StepText = ({ step }: { step: Step }) => (
       ))}
     </ul>
     <div className="flex items-center gap-2 text-sm font-semibold text-slate-600">
-      <span className="text-slate-700">🗓</span>
+      <span className="text-slate-700">📅</span>
       <span>{step.duration}</span>
     </div>
   </div>
@@ -234,7 +236,7 @@ const StepRow = ({ step, reverse }: { step: Step; reverse?: boolean }) => (
     whileInView="show"
     viewport={{ once: true, margin: "-80px" }}
     variants={stagger}
-    className="grid items-stretch gap-18 lg:grid-cols-2 lg:gap-24"
+    className="grid items-stretch gap-12 lg:grid-cols-2 lg:gap-24"
   >
     {reverse ? (
       <>
@@ -362,3 +364,8 @@ const WerkwijzePage = () => (
 );
 
 export default WerkwijzePage;
+
+
+
+
+

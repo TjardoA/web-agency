@@ -80,10 +80,13 @@ const ServicesPage = () => (
                 <h3 className="text-lg font-semibold text-ink">{service.title}</h3>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-slate-700">{service.description}</p>
-              <div className="mt-4 inline-flex items-center text-sm font-medium text-accent opacity-0 transition group-hover:opacity-100">
+              <a
+                href={service.path}
+                className="mt-4 inline-flex items-center text-sm font-medium text-accent opacity-0 transition group-hover:opacity-100"
+              >
                 Meer weten
-                <span className="ml-1">→</span>
-              </div>
+                <span className="ml-1">?</span>
+              </a>
             </motion.article>
           ))}
         </motion.div>
@@ -122,10 +125,10 @@ const ServicesPage = () => (
           className="grid gap-6 md:grid-cols-2 xl:grid-cols-4"
         >
           {[
-            { title: "Kick-off", desc: "Scope, doelen en succes-metrics vastleggen.", icon: "🎯", gradient: "from-rose-400 to-orange-300" },
-            { title: "Concept", desc: "Wireframes + content flow, direct deelbaar.", icon: "✏️", gradient: "from-orange-400 to-amber-300" },
-            { title: "Build & koppel", desc: "Snel itereren met componenten en integraties.", icon: "⚙️", gradient: "from-indigo-400 to-blue-300" },
-            { title: "Launch & boost", desc: "Performance, SEO check en monitoring.", icon: "🚀", gradient: "from-fuchsia-500 to-purple-400" }
+            { title: "Kick-off", desc: "Scope, doelen en succes-metrics vastleggen.", icon: "??", gradient: "from-rose-400 to-orange-300" },
+            { title: "Concept", desc: "Wireframes + content flow, direct deelbaar.", icon: "??", gradient: "from-orange-400 to-amber-300" },
+            { title: "Build & koppel", desc: "Snel itereren met componenten en integraties.", icon: "??", gradient: "from-indigo-400 to-blue-300" },
+            { title: "Launch & boost", desc: "Performance, SEO check en monitoring.", icon: "??", gradient: "from-fuchsia-500 to-purple-400" }
           ].map((step, i) => (
             <motion.div
               key={step.title}
@@ -214,3 +217,7 @@ const ServicesPage = () => (
 );
 
 export default ServicesPage;
+
+
+
+

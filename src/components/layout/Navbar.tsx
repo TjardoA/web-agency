@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
@@ -13,25 +13,6 @@ const links = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [dark, setDark] = useState(() => {
-    const stored = localStorage.getItem("theme");
-    if (stored === "dark") return true;
-    if (stored === "light") return false;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
-
-  useLayoutEffect(() => {
-    const root = document.documentElement;
-    if (dark) {
-      root.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      root.style.colorScheme = "dark";
-    } else {
-      root.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      root.style.colorScheme = "light";
-    }
-  }, [dark]);
 
   return (
     <header className="sticky top-0 z-20 border-b border-midnightSoft bg-midnight/95 backdrop-blur-sm shadow-soft">
@@ -65,21 +46,6 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <button
-            type="button"
-            onClick={() => setDark((v) => !v)}
-            aria-label={
-              dark ? "Schakel naar licht thema" : "Schakel naar donker thema"
-            }
-            className="flex items-center gap-2 rounded-full border border-white/30 px-3 py-1.5 text-xs font-semibold text-white hover:bg-white/10 transition"
-          >
-            <img
-              src={dark ? "/lightmode.png" : "/darkmode.png"}
-              alt=""
-              className="h-5 w-5 object-contain"
-            />
-            <span>{dark ? "Light" : "Dark"}</span>
-          </button>
         </nav>
       </div>
 
@@ -103,23 +69,6 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <button
-                type="button"
-                onClick={() => setDark((v) => !v)}
-                aria-label={
-                  dark
-                    ? "Schakel naar licht thema"
-                    : "Schakel naar donker thema"
-                }
-                className="mt-2 w-full rounded-lg border border-white/20 px-3 py-2 text-sm font-semibold text-white hover:bg-white/10 transition flex items-center gap-2"
-              >
-                <img
-                  src={dark ? "/lightmode.png" : "/darkmode.png"}
-                  alt=""
-                  className="h-5 w-5 object-contain"
-                />
-                <span>{dark ? "Light mode" : "Dark mode"}</span>
-              </button>
             </div>
           </motion.nav>
         )}
